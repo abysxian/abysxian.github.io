@@ -367,3 +367,14 @@ footer h2 em {
 @media (prefers-reduced-motion: reduce) {
     .wave-thread path { animation: none; }
 }
+
+@media (max-width: 640px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portrait {
+        width: 160px;
+        height: 210px;
+    }
+}
