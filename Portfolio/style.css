@@ -5,10 +5,14 @@
     --coral: #e8846b;
     --paper: #f4efe4;
     --paper-dim: #c8c2b3;
-    
+
     --display: 'Fraunces', serif;
     --mono: 'Space Mono', monospace;
     --body: 'Work Sans', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -45,7 +49,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     padding: 20px 32px;
-    max-width: 1040px;  
+    max-width: 1040px;
     margin: 0 auto;
 }
 
@@ -56,13 +60,13 @@ nav {
 }
 
 .navlinks {
-    display:flex;
+    display: flex;
     gap: 28px;
     font-family: var(--mono);
     font-size: 13px;
 }
 
-.navlinks a{
+.navlinks a {
     color: var(--paper-dim);
     transition: color 0.3s ease;
 }
@@ -101,6 +105,16 @@ nav {
 .hero > * {
     position: relative;
     z-index: 1;
+    animation: load-in 0.9s ease both;
+}
+
+.hero .eyebrow  { animation-delay: 0.1s; }
+.hero h1        { animation-delay: 0.25s; }
+.hero .hero-sub { animation-delay: 0.45s; }
+
+@keyframes load-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 .eyebrow {
@@ -120,7 +134,7 @@ h1 {
     max-width: 800px;
 }
 
-h1 em{
+h1 em {
     font-style: italic;
     color: var(--coral);
 }
@@ -135,6 +149,7 @@ h1 em{
 section {
     padding: 70px 0;
     border-top: 1px solid rgba(244, 239, 228, 0.14);
+    scroll-margin-top: 80px;
 }
 
 .section-head {
@@ -161,6 +176,7 @@ section {
     color: var(--seafoam);
 }
 
+/* ---------- ABOUT ---------- */
 .about-grid {
     display: grid;
     grid-template-columns: 220px 1fr;
@@ -188,6 +204,7 @@ section {
     color: var(--paper);
 }
 
+/* ---------- EDUCATION ---------- */
 .edu-card {
     border: 1px solid rgba(244, 239, 228, 0.14);
     border-radius: 12px;
@@ -227,6 +244,102 @@ section {
     white-space: nowrap;
 }
 
+/* ---------- ACHIEVEMENTS ---------- */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.achievement-card {
+    border-left: 2px solid var(--sand);
+    padding: 18px 22px;
+    border-radius: 0 10px 10px 0;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.achievement-card:hover {
+    background: rgba(244, 239, 228, 0.03);
+    transform: translateX(3px);
+}
+
+.achievement-card h3 {
+    font-family: var(--display);
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.achievement-card p {
+    color: var(--paper-dim);
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.achievement-card .tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--paper-dim);
+}
+
+/* ---------- PROJECTS ---------- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.project-card {
+    border: 1px solid rgba(244, 239, 228, 0.14);
+    border-radius: 12px;
+    padding: 28px;
+    background: #16303f;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--seafoam);
+}
+
+.project-card h3 {
+    font-family: var(--display);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    color: var(--paper-dim);
+    font-size: 15px;
+    margin-bottom: 16px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.project-tags .skill-chip {
+    padding: 6px 12px;
+    font-size: 11px;
+}
+
+.project-link {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--coral);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.project-link:hover {
+    border-color: var(--coral);
+}
+
+/* ---------- SKILLS ---------- */
 .skills {
     display: flex;
     flex-wrap: wrap;
@@ -241,16 +354,18 @@ section {
     border-radius: 7px;
     padding: 10px 16px;
     background: #16303f;
-    transition: transform 0.3s ease, border-color 0.3s ease;    
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
+
 .skill-chip:hover {
     border-color: var(--seafoam);
     transform: translateY(-2px);
 }
 
+/* ---------- QUOTES ---------- */
 .quotes-grid {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
 }
 
@@ -274,20 +389,22 @@ section {
     font-family: var(--display);
     font-style: italic;
     font-size: 18px;
-    margin-bottom: 12px;    
+    margin-bottom: 12px;
 }
 
 .quote-card .tag {
     font-family: var(--mono);
     font-size: 11px;
-    text-transform:uppercase;
+    text-transform: uppercase;
     letter-spacing: 0.06em;
     color: var(--paper-dim);
 }
 
+/* ---------- FOOTER ---------- */
 footer {
     padding: 90px 0 50px;
-    border-top: 1px solid rgba(244,293,228,0.14);
+    border-top: 1px solid rgba(244, 239, 228, 0.14);
+    scroll-margin-top: 80px;
 }
 
 footer h2 {
@@ -334,38 +451,33 @@ footer h2 em {
     opacity: 0.6;
 }
 
-.wave-thread {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.5;
-}
-
-.wave-thread svg {
-    width: 100%;
-    height: 100%;
-}
-
-.wave-thread path {
-    fill: none;
-    stroke: var(--seafoam);
-    stroke-width: 1;
-    stroke-opacity: 0.25;
-    stroke-dasharray: 8 10;
-    animation: drift 40s linear infinite;
-}
-
-@keyframes drift {
-    0% { stroke-dashoffset: 0; }
-    100% { stroke-dashoffset: 1000; }
-}
 
 @media (prefers-reduced-motion: reduce) {
-    .wave-thread path { animation: none; }
+    .hero > * { animation: none; opacity: 1; transform: none; }
+}
+
+/* ---------- MOBILE RESPONSIVENESS ---------- */
+@media (max-width: 768px) {
+    .navlinks {
+        gap: 14px;
+        font-size: 11px;
+        flex-wrap: wrap;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .quotes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .edu-card {
+        grid-template-columns: 1fr;
+        justify-items: start;
+    }
 }
 
 @media (max-width: 640px) {
