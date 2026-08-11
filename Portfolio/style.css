@@ -197,7 +197,7 @@ section {
     color: var(--paper-dim);
     margin-bottom: 16px;
     max-width: 550px;
-    font-size: 22.5px;
+    font-size: 14px;
 }
 
 .about-text strong {

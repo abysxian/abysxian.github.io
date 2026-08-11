@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="5">
+        <tr>
+            <th colspan="2">Student Report</th>
+        </tr>
+        <tr>
+            <th rowspan="2">Name: John</th>
+            <th colspan="2"> Math: 90</th>
+        </tr>
+        <tr>
+            <th>Science: 90</th>
+        </tr>
+    </table>
+
+<form action="/submit" method="POST">
+  <label for="fullname">Full Name:</label>
+  <input type="text" id="fullname" name="fullname" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email">
+
+  <p>Preferred Contact Method:</p>
+  <input type="radio" id="contactEmail" name="contact" value="email">
+  <label for="contactEmail">Email</label>
+
+  <input type="radio" id="contactPhone" name="contact" value="phone">
+  <label for="contactPhone">Phone</label>
+
+  <input type="radio" id="contactSMS" name="contact" value="sms">
+  <label for="contactSMS">SMS</label>
+
+  <button type="submit">Submit</button>
+
+    
+    <div class="container">
+        <p>I am enrolled in UIC</p>
+        <p>My name is Christian</p>
+        <p>My name is Christian</p>
+        <p>My name is Christian</p>
+        
+    </div>
+</form>
+</body>
+</html>
