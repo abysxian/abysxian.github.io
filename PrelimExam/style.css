@@ -124,4 +124,26 @@ body {
   box-sizing: border-box;
 }
 
-.specs-table {}
+.specs-table {
+    width: 100%;
+  border-collapse: collapse; /* Merges double borders into a single clean border */
+  margin: 1rem 0;
+  font-family: Arial, sans-serif;
+}
+
+.specs-table th, td {
+    padding: 12px 15px;      /* Spacing inside cells */
+  border: 1px solid #3b3a3a59;  /* Cell borders */
+  text-align: left;
+}
+
+.bold-text {
+    color: #FBE28D;
+    font-weight:600;
+}
+
+.specs-table th {
+    background-color: hsla(30, 4%, 20%, 0.329); /* Header background */
+  color:#FBE28D;
+  font-weight: bold
+}
