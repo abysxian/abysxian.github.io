@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriStep Mobile Prototype</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="mobile-frame">
+    <header class="app-header">
+      <h1>AgriStep PH</h1>
+      <p class="subtitle">Easy Backyard Farming & Plant Tracker</p>
+    </header>
+
+    <main class="app-body">
+      <!-- Garden Overview Dashboard -->
+      <section class="stats-bar card">
+        <div class="stat-item">
+          <span class="stat-number" id="stat-planted">0</span>
+          <span class="stat-label">Planted Plots</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" id="stat-ready">0</span>
+          <span class="stat-label">Ready to Harvest</span>
+        </div>
+      </section>
+
+      <!-- Section 1: Dirt & Weather Selection -->
+      <section id="climate-section" class="card">
+        <h2>1. Dirt & Weather Analysis</h2>
+        <div class="input-group">
+          <label for="location-select">Select Your Dirt & Weather Type:</label>
+          <select id="location-select">
+            <option value="rich-dry">🌱 Soft Garden Soil (Rich Dirt) - Sunny Season</option>
+            <option value="rich-wet">🌧️ Soft Garden Soil (Rich Dirt) - Rainy Season</option>
+            <option value="sandy">🏖️ Sandy Beach Dirt (Loose & Drains Fast)</option>
+            <option value="sticky-clay">🧱 Sticky Clay Mud (Heavy & Holds Water)</option>
+          </select>
+        </div>
+        <button id="analyze-btn" class="btn-primary">Find Suitable Philippine Crops</button>
+        <div id="crop-recommendations" class="recommendations-box"></div>
+      </section>
+
+      <!-- Section 2: Spatial Backyard Grid -->
+      <section id="grid-section" class="card">
+        <h2>2. Backyard Plot Grid</h2>
+        <p class="instruction">Tap a plot to plant your selected crop.</p>
+        <div id="grid-container" class="grid-3x3"></div>
+      </section>
+
+      <!-- Section 3: Task Checklist & Progress -->
+      <section id="task-section" class="card">
+        <div class="task-card-header">
+          <h2>3. Daily Task Checklist</h2>
+          <button id="clear-plot-btn" class="btn-action-danger" style="display: none;">Harvest / Reset Plot</button>
+        </div>
+        <div id="active-cell-info" class="cell-info">Select a plot cell to view or toggle tasks</div>
+        
+        <!-- Progress Bar -->
+        <div id="progress-container" class="progress-container" style="display: none;">
+          <div class="progress-bar">
+            <div id="progress-fill" class="progress-fill" style="width: 0%;"></div>
+          </div>
+          <span id="progress-text" class="progress-text">0% Complete</span>
+        </div>
+
+        <ul id="task-list" class="task-list"></ul>
+      </section>
+
+      <!-- Section 4: All-Plant Care & Pest Control Tips -->
+      <section id="tips-section" class="card">
+        <h2>💡 Easy Plant Care & Bug Tips</h2>
+        <div id="tips-content" class="tips-container">
+          Plant crops on your grid to view simple crop care and bug control tips!
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
